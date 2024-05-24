@@ -14,7 +14,7 @@ export const fetchPokemon = createAsyncThunk("pokemon/ID", async (id) => {
 });
 
 export const fetchPokeBall = createAsyncThunk("pokeball", async () => {
-  const response = await axios.get(`https://pokeapi.co/api/v2/item/4/`);
+  const response = await axios.get("https://pokeapi.co/api/v2/item/4/");
   return response.data;
 });
 
@@ -46,8 +46,6 @@ export const pokemonSlice = createSlice({
       });
   },
 });
-
-// export const {} = pokemonSlice.actions;
 
 export const { cleanPokemon } = pokemonSlice.actions;
 

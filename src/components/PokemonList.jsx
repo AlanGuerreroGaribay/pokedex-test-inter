@@ -116,18 +116,20 @@ const PokemonList = () => {
         {/* contenedor con los botones para navegacion */}
         <div className="flex">
           <button
+            disabled={currentPage === 1}
             onClick={() => {
               handleNavigationPrevious(currentPage);
             }}
-            className="mr-3 my-9 p-4 bg-slate-600 rounded-lg active:opacity-35"
+            className="mr-3 my-9 p-4 bg-slate-600 rounded-lg active:opacity-35 disabled:bg-slate-500 disabled:pointer-events-none select-none"
           >
             Previous
           </button>
           <button
+            disabled={currentPage >= pokemonList.results.length / 20}
             onClick={() => {
               handleNavigationNext(currentPage);
             }}
-            className="mr-3 my-9 p-4 bg-slate-600 rounded-lg active:opacity-35"
+            className="mr-3 my-9 p-4 bg-slate-600 rounded-lg active:opacity-35 disabled:bg-slate-500 disabled:pointer-events-none select-none"
           >
             Next
           </button>
