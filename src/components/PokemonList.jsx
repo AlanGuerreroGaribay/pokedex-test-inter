@@ -125,7 +125,7 @@ const PokemonList = () => {
             Previous
           </button>
           <button
-            disabled={currentPage >= pokemonList.results.length / 20}
+            disabled={currentPage >= pokemonList?.results?.length / 20}
             onClick={() => {
               handleNavigationNext(currentPage);
             }}
