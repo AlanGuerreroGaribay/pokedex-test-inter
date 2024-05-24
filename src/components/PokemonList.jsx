@@ -93,7 +93,7 @@ const PokemonList = () => {
             .map((pokemon, i) => {
               return (
                 <div
-                  key={i}
+                  key={`pokemon-data-id-${i}`}
                   onDoubleClick={() => {
                     handleDoubleClickNavigation(pokemon.url);
                   }}

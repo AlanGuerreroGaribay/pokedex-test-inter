@@ -15,7 +15,7 @@ const PokemonViewDetail = () => {
     dispatch(cleanPokemon());
     navigate(-1);
   };
-  console.log(pokemonDataDetail.state.pokemon.moves[0].move.name);
+
   return (
     <div className="flex h-full">
       <div className="w-1/2 flex items-center justify-center">
@@ -45,11 +45,9 @@ const PokemonViewDetail = () => {
           <div className="text-2xl font-extrabold mt-10">Abilities:</div>
           {pokemonDataAbilities.map((ability, i) => {
             return (
-              <>
-                <div key={i} className="ml-3">
-                  ability {i + 1}: {ability.ability.name}
-                </div>
-              </>
+              <div key={`pokemon-data-type-${i}`} className="ml-3">
+                ability {i + 1}: {ability.ability.name}
+              </div>
             );
           })}
         </div>
@@ -58,7 +56,7 @@ const PokemonViewDetail = () => {
           {pokemonDataMoves.map((move, i) => {
             return (
               <>
-                <div key={i} className="ml-3">
+                <div key={`pokemon-data-ability-${i}`} className="ml-3">
                   ability {i + 1}: {move.move.name}
                 </div>
               </>
