@@ -75,6 +75,8 @@ const PokemonList = () => {
     handlePaginator(parseInt(params.group));
   }, [pokemon, pokemonList, pokeBall, params, dispatch]);
 
+  console.log('this nutz', pokemonList?.results?.length);
+
   return (
     <div className="flex h-full">
       {/* renderiza la imagen del pokemon seleccionado */}
