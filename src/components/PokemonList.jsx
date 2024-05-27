@@ -12,8 +12,8 @@ const PokemonList = () => {
   const dispatch = useDispatch();
   const params = useParams();
   const pokeBall = useSelector((state) => state.pokemon.pokeball);
-  const pokemon = useSelector((state) => state.pokemon.pokemondata);
   const pokemonList = useSelector((state) => state.pokemon.success);
+  const pokemon = useSelector((state) => state.pokemon.pokemondata);
   const [image, setImage] = useState("");
   const [currentPage, setCurrentPage] = useState();
   const [selected, setSelected] = useState("");
@@ -74,8 +74,6 @@ const PokemonList = () => {
 
     handlePaginator(parseInt(params.group));
   }, [pokemon, pokemonList, pokeBall, params, dispatch]);
-
-  console.log('this nutz', pokemonList?.results?.length);
 
   return (
     <div className="flex h-full">
